@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2e2e2e;
+  color: white;
+  text-align: center;
+  touch-action: pan-x pan-y;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;  /* MaximalgrÃ¶ÃŸe fÃ¼r grÃ¶ÃŸere Bildschirme */
+  height: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  max-width: 320px;  /* Maximale Breite fÃ¼r den Canvas */
+  max-height: 480px; /* Maximale HÃ¶he fÃ¼r den Canvas */
+  border: 2px solid #fff;
+  background-color: #222;
+}
+
+#info-container {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+#score, #level {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+#touch-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 320px;  /* Maximale Breite der Steuerbuttons */
+}
+
+#touch-controls button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#touch-controls button:hover {
+  background-color: #666;
+}
+
+@media screen and (max-width: 600px) {
+  #game-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  canvas {
+    max-width: 100%;
+    max-height: 60%;
+  }
+
+  #touch-controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 Spalten */
+    gap: 8px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #touch-controls button {
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #touch-controls button {
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+
+  #score, #level {
+    font-size: 1rem;
+  }
+  
+  #game-container{
+   width: 80%;
+ }
+}
+
